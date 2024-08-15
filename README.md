@@ -1,8 +1,7 @@
 # ollama_ui
-## Install dependencies
-### create virtual environment
+## create virtual environment
 ```python -m venv venv```
-### install dependencies
+## install dependencies
 ```pip install -r requirements.txt```
-### run app
+## run app
 ```python app.py```
