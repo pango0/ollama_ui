@@ -1,0 +1,6 @@
+flask
+psutil
+GPUtil
+platform
+requests
+json
