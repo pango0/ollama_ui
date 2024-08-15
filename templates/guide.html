@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static',filename='styles/mainpage.css') }}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar close">
+    <div class="logo-details">
+    <i class='bx bx-network-chart' ></i>
+      <span class="logo_name">Menu</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="{{url_for('homepage')}}">
+          <i class='bx bx-home'></i>
+          <span class="link_name">Home</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{{url_for('homepage')}}">Home</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="{{url_for('available_models')}}">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Available Models</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="{{url_for('available_models')}}">Available Models</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="{{url_for('guide')}}">
+            <i class='bx bx-book-alt' ></i>
+            <span class="link_name">Guide</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="{{url_for('guide')}}">Guide</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="{{url_for('chat')}}">
+            <i class='bx bx-conversation' ></i>
+          <span class="link_name">Chat</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{{url_for('chat')}}">Chat</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="{{url_for('running_models')}}">
+            <i class='bx bx-loader-alt' ></i>
+          <span class="link_name">Running Models</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{{url_for('running_models')}}">Running Models</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="{{url_for('pull_models')}}">
+            <i class='bx bx-download' ></i>
+            <span class="link_name">Pull Models</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="{{url_for('pull_models')}}">Pull Models</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="{{url_for('explore')}}">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">Explore</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{{url_for('explore')}}">Explore</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="{{url_for('hardware_information')}}">
+            <i class='bx bx-hdd' ></i>
+          <span class="link_name">Hardware</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{{url_for('hardware_information')}}">Hardware</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="{{url_for('settings')}}">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{{url_for('settings')}}">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">Admin</div>
+        <div class="job">Username</div>
+      </div>
+      <i class='bx bx-log-out' ></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text">Ollamapp</span>
+      
+    </div>
+    <span class="intro">
+      Ultra-lightweight web app for Ollama management and application
+    </span>
+  </section>
+  
+  <div class="one"></div>
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+</body>
+</html>
